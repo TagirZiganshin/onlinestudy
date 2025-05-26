@@ -7,7 +7,7 @@
       <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
         <thead class="bg-gray-50">
           <tr>
-            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Role</th>
+            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Роль</th>
             <th scope="col" class="px-6 py-4 font-medium text-gray-900">Id</th>
           </tr>
         </thead>
@@ -29,7 +29,7 @@
             </td>
             <td class="px-6 py-4">
               <div class="flex justify-end gap-4">
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Сохранить</button>
               </div>
             </td>
           </tr>

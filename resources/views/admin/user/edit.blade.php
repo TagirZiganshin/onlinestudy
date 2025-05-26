@@ -7,9 +7,9 @@
       <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
         <thead class="bg-gray-50">
           <tr>
-            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Username</th>
-            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Email</th>
-            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Role</th>
+            <th scope="col" class="px-6 py-4 font-medium text-gray-900">ФИО</th>
+            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Почта</th>
+            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Роль</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -31,7 +31,7 @@
             <td class="px-6 py-4">
               <div>
                 <select id="roleSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-70 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="role">
-                  <option value="Select Role" selected>Select Role</option>
+                  <option value="Select Role" selected>Выбрать роль</option>
                   @foreach ($roles as $role)
                     <option value="{{ $role->id }}">{{ $role->name }}</option>
                   @endforeach
@@ -41,7 +41,7 @@
             <td class="px-6 py-4">
                 <div>
                   <select id="trainingSelect" class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-70 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="training">
-                    <option value="Select Training" selected>Select Training</option>
+                    <option value="Select Training" selected>Выбрать курс</option>
                     @foreach ($trainings as $training)
                       <option value="{{ $training->id }}">{{ $training->title }}</option>
                     @endforeach
@@ -50,7 +50,7 @@
               </td>
             <td class="px-6 py-4">
               <div class="flex justify-end gap-4">
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Сохранить</button>
               </div>
             </td>
           </tr>

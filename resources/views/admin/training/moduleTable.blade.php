@@ -7,9 +7,9 @@
   <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
     <thead>
         <tr>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Module Title</th>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Module Description</th>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Action</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Название модуля</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Описание модуля</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Действие</th>
         </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
@@ -19,7 +19,7 @@
                 <td class="px-6 py-4 whitespace-no-wrap">{{ $module->description }}</td>
                 <td class="px-6 py-4 whitespace-no-wrap">
                     <div class="flex gap-4">
-                        <a href="{{ route('module.edit', ['module' => $module->id, 'training' => $training->id]) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
+                        <a href="{{ route('module.edit', ['module' => $module->id, 'training' => $training->id]) }}" class="text-blue-500 hover:text-blue-700">Изменить</a>
                         <form action="{{ route('module.destroy', $module->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

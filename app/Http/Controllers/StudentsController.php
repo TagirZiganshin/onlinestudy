@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\File;
 use App\Models\Lecture;
 use App\Models\Student;
+use App\Models\Homework;
 use App\Models\Training;
 use App\Models\FileTraining;
 use Illuminate\Support\Facades\Auth;
@@ -166,8 +167,9 @@ class StudentsController extends Controller
         $lectures = Lecture::all();
         $currentTraining = Training::find($id);
         $students = Student::all();
+        $homeworks = Homework::where("training_id", $currentTraining->id)->get();
         $files = FileTraining::where('training_id', $currentTraining->id)->get();
-        return view('student.trainings',compact('files','lectures','students','currentTraining'));
+        return view('student.trainings',compact('files','lectures','students','currentTraining', "homeworks"));
     }
 
     public function download(FileTraining $file)

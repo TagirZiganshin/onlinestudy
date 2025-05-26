@@ -15,13 +15,13 @@
             <line x1="9" y1="12" x2="15" y2="12" />
             <line x1="12" y1="9" x2="12" y2="15" />
         </svg>
-        <span class="ml-2">Add Training</span>
+        <span class="ml-2">Добавить курс</span>
     </a>
 </th>
-        <th scope="col" class="px-6 py-4 font-large text-gray-900">Add Module</th>
-        <th scope="col" class="px-6 py-4 font-large text-gray-900">Add Lecture</th>
-        <th scope="col" class="px-6 py-4 font-large text-gray-900">Add Homework</th>
-        <th scope="col" class="px-6 py-4 font-large text-gray-900">Edit/Delete Training</th>
+        <th scope="col" class="px-6 py-4 font-large text-gray-900">Добавить модуль</th>
+        <th scope="col" class="px-6 py-4 font-large text-gray-900">Добавить Лекцию</th>
+        <th scope="col" class="px-6 py-4 font-large text-gray-900">Добавить Домашнее Задание</th>
+        <th scope="col" class="px-6 py-4 font-large text-gray-900">Изменить/Удалить Курс</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-100 border-t border-gray-100">

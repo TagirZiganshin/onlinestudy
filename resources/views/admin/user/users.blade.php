@@ -6,9 +6,9 @@
       <thead class="bg-gray-50">
         <tr>
           <th scope="col" class="px-6 py-4 font-large text-gray-900">Id</th>
-          <th scope="col" class="px-6 py-4 font-large text-gray-900">Username</th>
-          <th scope="col" class="px-6 py-4 font-large text-gray-900">Role</th>
-          <th scope="col" class="px-6 py-4 font-large text-gray-900">Account Created On</th>
+          <th scope="col" class="px-6 py-4 font-large text-gray-900">ФИО</th>
+          <th scope="col" class="px-6 py-4 font-large text-gray-900">Роль</th>
+          <th scope="col" class="px-6 py-4 font-large text-gray-900">Дата создание аккаунта</th>
           <th scope="col" class="px-6 py-4 font-large text-gray-900"></th>
           {{-- <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th> --}}
         </tr>
@@ -34,12 +34,12 @@
                 <form action="{{ route('users.edit',['id'=>$user->id]) }}" method="GET">
                 @csrf
                 @method('PUT')
-                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
+                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Изменить</button>
                 </form>
                 <form action="{{ route('user.delete',['id'=>$user->id]) }}" method="POST">
                  @csrf
                 @method('DELETE')
-                    <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Delete</button>
+                    <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Удалить</button>
                 </form>
             </div>
           </td>

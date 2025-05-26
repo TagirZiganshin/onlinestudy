@@ -16,7 +16,7 @@
                         <line x1="9" y1="12" x2="15" y2="12" />
                         <line x1="12" y1="9" x2="12" y2="15" />
                     </svg>
-                    <span class="ml-2">Add Role</span>
+                    <span class="ml-2">Добавить роль</span>
                 </a>
             </th>
           <th scope="col" class="px-6 py-4 font-large text-gray-900">Id</th>
@@ -37,12 +37,12 @@
                 <form action="{{ route('role.edit',['id'=>$role->id]) }}" method="GET">
                 @csrf
                 @method('PUT')
-                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
+                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Изменить</button>
                 </form>
                 <form action="{{ route('role.delete',['id'=>$role->id]) }}" method="POST">
                  @csrf
                 @method('DELETE')
-                    <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Delete</button>
+                    <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Удалить</button>
                 </form>
             </div>
           </td>

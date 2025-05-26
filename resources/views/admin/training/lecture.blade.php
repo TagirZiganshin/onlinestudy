@@ -6,7 +6,7 @@
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    <h1 class="text-2xl font-bold mb-4">Add/Edit LECTURE</h1>
+    <h1 class="text-2xl font-bold mb-4">Добавить/Изменить лекцию</h1>
     <h1 class="text-xl font-bold mb-4"><a class="text-black hover:text-green-500" href="{{ route('training.table')}}">Назад </a></h1> <br>
     <form method="POST" action="{{ isset($lecture) ?route('lecture.update',['lecture' => $lecture]) : route('lecture.store') }}">
         @csrf
@@ -15,9 +15,9 @@
         @endif
 
         @if (!isset($lecture))
-        <h1 class="text-2xl font-bold mb-4">TRAINING TITLE: {{ $training->title }}</h1>
+        <h1 class="text-2xl font-bold mb-4">Название курса: {{ $training->title }}</h1>
 
-        <label class="font-bold" for="module_id">MODULE TITLE: </label>
+        <label class="font-bold" for="module_id">Название Модуля: </label>
         <select name="module_id" id="module_id" class="form-select w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
             @foreach ($training->modules as $module)
                 <option value="{{ $module->id }}">{{ $module->title }}</option>
@@ -26,10 +26,10 @@
         @endif
 
         @if (!isset($lecture))
-        <label for="lecture_title" class="font-bold mb-2 block bg-green-500 p-2 rounded inline-block" id="add_lecture_label">+ ADD Lecture</label><br>
+        <label for="lecture_title" class="font-bold mb-2 block bg-green-500 p-2 rounded inline-block" id="add_lecture_label">+ Добавить лекцию</label><br>
          @endif
-        <input type="text" id="lecture_title" name="{{ isset($lecture) ? 'lecture_title' : 'lecture_title[]' }}"  placeholder="Title"  class="w-full px-3 py-2 rounded border border-gray-300 mb-4"><br>
-        <textarea id="lecture_description" name="{{ isset($lecture) ? 'lecture_description' : 'lecture_description[]' }}" placeholder="Description"  class="w-full px-3 py-2 rounded border border-gray-300 mb-4"></textarea><br><br>
+        <input type="text" id="lecture_title" name="{{ isset($lecture) ? 'lecture_title' : 'lecture_title[]' }}"  placeholder="Название"  class="w-full px-3 py-2 rounded border border-gray-300 mb-4"><br>
+        <textarea id="lecture_description" name="{{ isset($lecture) ? 'lecture_description' : 'lecture_description[]' }}" placeholder="Описание"  class="w-full px-3 py-2 rounded border border-gray-300 mb-4"></textarea><br><br>
         <input type="date" id="lecture_date" name="{{ isset($lecture) ? 'lecture_date' : 'lecture_date[]' }}"  class="w-full px-3 py-2 rounded border border-gray-300 mb-4">
 
         <ul id="lecture_list"></ul>
@@ -40,7 +40,7 @@
         @elseif(request()->routeIs('lecture.edit'))
             <input type="hidden" type="text">
         @endif
-        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded float-right">SAVE</button>
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded float-right">Сохранить</button>
     </form>
 </div>
 

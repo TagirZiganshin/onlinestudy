@@ -1,14 +1,14 @@
 @extends('layout')
 @section('content')
 <div class="w-3/4 relative overflow-x-auto shadow-md sm:rounded-lg mx-auto text-center">
-    <h1 class="text-2xl font-bold text-left pr-4">Grades/Absence</h1>
+    <h1 class="text-2xl font-bold text-left pr-4">Оценки/Успеваемость</h1>
     <br><br>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <form action="{{ route('absence') }}" method="POST">
         @csrf
     <div id="container" class="flex ... w-2/3">
         <select id="trainings" class="bg-gray-50 border h-10 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Select training</option>
+            <option selected>Выбрать курс</option>
         </select>
         <br>
         <select id="modules" class="bg-gray-50 border h-10 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" style="display: none;">
@@ -32,59 +32,59 @@
     <br>
     <div id="grades_container" class="w-2/3 flex justify-end relative ml-96">
         <div class="border border-gray-300 rounded-lg p-5">
-            <h2>Overall Grade / <span id="average-training-grade"></span></h2>
+            <h2>Оценка в целом / <span id="average-training-grade"></span></h2>
             <p></p>
-            <h2>Module Grade / <span id="average-module-grade"></span></h2>
+            <h2>Оценка за модуль / <span id="average-module-grade"></span></h2>
             <p></p>
-            <h2>Lecture Grade / <span id="average-lecture-grade"></span></span></h2>
+            <h2>Оценка за лекцию / <span id="average-lecture-grade"></span></span></h2>
             <p></p>
-            <h2>Current Lecture Grade / <span id="lectureGrade" name="lectureGrade"></span></h2>
+            <h2>Текущая оценка за лекцию / <span id="lectureGrade" name="lectureGrade"></span></h2>
         </div>
     </div>
-    <label for="message" class="block mb-2 font-bold text-left text-2xl font-medium text-gray-900 dark:text-white">Absence</label>
+    <label for="message" class="block mb-2 font-bold text-left text-2xl font-medium text-gray-900 dark:text-white">Успеваемость</label>
 <div id="absence_container" class="hidden">
     <div class="flex items-center w-full">
     <ul class="items-center w-2/4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
         <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
             <div class="flex items-center pl-3">
                 <input id="was_late" type="radio" value="was_late" name="attendance_status" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="was_late" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Was late </label>
+                <label for="was_late" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Опоздал </label>
             </div>
         </li>
         <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
             <div class="flex items-center pl-3">
                 <input id="escaped" type="radio" value="escaped" name="attendance_status" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="escaped" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Escaped</label>
+                <label for="escaped" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ушел с занятия</label>
             </div>
         </li>
         <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
             <div class="flex items-center pl-3">
                 <input id="did_not_come" type="radio" value="did_not_come" name="attendance_status" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="did_not_come" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Did not come</label>
+                <label for="did_not_come" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Не было</label>
             </div>
         </li>
     </ul>
     <br>
     <div class="flex items-center justify-end ml-auto">
         <input id="default-checkbox" name="disregarded" type="checkbox" value="false" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Disregarded</label>
+        <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">игнорировать</label>
     </div>
     </div>
-    <textarea id="note" name="note" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+    <textarea id="note" name="note" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Причина"></textarea>
 </div>
     <br>
-    <h1 class="text-2xl font-bold text-left pr-4">Homework</h1>
+    <h1 class="text-2xl font-bold text-left pr-4">Домашнее задания</h1>
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        Title
+                        Название
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Status
+                        Статус
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Grade
+                        Оценка
                     </th>
                 </tr>
             </thead>
@@ -97,7 +97,7 @@
     <br>
 
     <div class="flex justify-end w-full relative right-60">
-    <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-1/6 px-5 py-2.5 ml-200 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+    <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-1/6 px-5 py-2.5 ml-200 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Сохранить</button>
     </div>
 </form>
 <script src="{{ asset('js/grades.js') }}"></script>

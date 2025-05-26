@@ -15,11 +15,11 @@
             <line x1="9" y1="12" x2="15" y2="12" />
             <line x1="12" y1="9" x2="12" y2="15" />
         </svg>
-        <span class="ml-2">Add Student</span>
+        <span class="ml-2">Добавить студента</span>
     </a>
 </th>
-                <th scope="col" class="px-6 py-4 font-large text-gray-900">Add Skills</th>
-                <th scope="col" class="px-6 py-4 font-large text-gray-900">Action</th>
+                <th scope="col" class="px-6 py-4 font-large text-gray-900">Добавить навыки</th>
+                <th scope="col" class="px-6 py-4 font-large text-gray-900">Действие</th>
             </tr>
         </thead>
         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -31,7 +31,7 @@
                     </label>
                 </td>
                 <td class="px-6 py-4">
-                <a href="{{ route('student.skill', ['student_id' => $student->id]) }}">Add</a>
+                <a href="{{ route('student.skill', ['student_id' => $student->id]) }}">Добавить</a>
                 </td>
                 <td class="px-6 py-4 flex items-center">
                     <a href="{{ route('student.edit', ['student' => $student->id]) }}" class="text-blue-500 mr-2">

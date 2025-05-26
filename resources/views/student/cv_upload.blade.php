@@ -2,7 +2,7 @@
 @section('content')
 <div class="flex justify-center items-center">
   <div class="w-96 bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-2xl mb-4">Загрузить домашнее задание</h2>
+    <h2 class="text-2xl mb-4">Загрузить файл</h2>
     @if ($errors->any())
       <div class="bg-red-200 text-red-800 px-4 py-2 rounded mb-4">
         <ul>
@@ -24,7 +24,7 @@
         <input type="file" class="border border-gray-300 py-2 px-4 rounded w-full" id="cv" name="cv">
       </div>
       @if ($file)
-        <p class="mb-4">Название дз: {{ $file->name }}</p>
+        <p class="mb-4">название: {{ $file->name }}</p>
       @endif
       <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Загрузить</button>
     </form>

@@ -4,9 +4,9 @@
     <a class="text-black hover:text-green-500" href="{{ route('training.table')}}">Назад</a>
 </h1>
 <div class="mb-4 relative left-60 w-3/4 overflow-hidden rounded-lg border">
-    <label for="module" class="block text-sm font-medium text-gray-700">Select Module:</label>
+    <label for="module" class="block text-sm font-medium text-gray-700">Выбирите модуль:</label>
     <select id="module" name="module" onchange="updateModuleId()" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-        <option value="">All Modules</option>
+        <option value="">Все модули</option>
         @foreach ($training->modules as $module)
             <option value="{{ $module->id }}">{{ $module->title }}</option>
         @endforeach
@@ -20,9 +20,9 @@
 <table id="lecture-table" class="min-w-full divide-y divide-gray-200">
     <thead>
         <tr>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Lecture Title</th>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Lecture Description</th>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Action</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Название лекции</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Описание лекции</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Действие</th>
         </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
@@ -33,7 +33,7 @@
             <td class="px-6 py-4 whitespace-no-wrap">{{ $lecture->description }}</td>
             <td class="px-6 py-4 whitespace-no-wrap">
                 <div class="flex gap-4">
-                    <a href="{{ route('lecture.edit', ['lecture' => $lecture->id]) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
+                    <a href="{{ route('lecture.edit', ['lecture' => $lecture->id]) }}" class="text-blue-500 hover:text-blue-700">Изменить</a>
                     <form action="{{ route('lecture.destroy', $lecture->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

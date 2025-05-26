@@ -4,9 +4,9 @@
     <a class="text-black hover:text-green-500" href="{{ route('training.table')}}">Назад</a>
 </h1>
 <div class="mb-4 relative left-60 w-3/4 overflow-hidden rounded-lg border">
-<h1 class="text-2xl font-bold mb-4">TRAINING TITLE: {{ $training->title }}</h1>
+<h1 class="text-2xl font-bold mb-4">Название курса: {{ $training->title }}</h1>
 <input type="hidden" name="training_id" id="training_id" value="{{ $training->id }}">
-<label class="font-bold" for="module_id">MODULE TITLE:</label>
+<label class="font-bold" for="module_id">Название модуля:</label>
 <select name="module_id" id="module_id" class="form-select w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
     @foreach ($training->modules as $module)
         <option value="{{ $module->id }}">{{ $module->title }}</option>
@@ -15,9 +15,9 @@
 
 <input type="hidden" name="module_id_hidden" id="module_id_hidden" value="{{ $module->id }}">
 
-<label class="font-bold" for="lecture_id">LECTURE TITLE:</label>
+<label class="font-bold" for="lecture_id">Название лекции:</label>
 <select name="lecture_id" id="lecture_id" onchange="updateLectureId()" class="form-select w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-    <option value="">Изберете лекция</option>
+    <option value="">Выберите лекцию</option>
 </select><br><br>
 </div>
 
@@ -28,9 +28,9 @@
 <table id="homework-table" class="min-w-full divide-y divide-gray-200">
     <thead>
         <tr>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Tasks</th>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Homework Description</th>
-            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Action</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Название дз</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Описание дз</th>
+            <th class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Действие</th>
         </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
@@ -40,7 +40,7 @@
                 <td class="px-6 py-4 whitespace-no-wrap">{{ $homework->description }}</td>
                 <td class="px-6 py-4 whitespace-no-wrap">
                     <div class="flex gap-4">
-                        <a href="{{ route('homework.edit', ['homework' => $homework->id]) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
+                        <a href="{{ route('homework.edit', ['homework' => $homework->id]) }}" class="text-blue-500 hover:text-blue-700">Изменить</a>
                         <form action="{{ route('homework.destroy', $homework->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

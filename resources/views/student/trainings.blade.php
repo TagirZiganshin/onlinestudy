@@ -13,7 +13,6 @@
         <br><br>
         <div class="trainings">
 
-    <br><br>
 
     <br>
         <input type="hidden" name="module_id_hidden" id="module_id_hidden" value="">
@@ -28,7 +27,7 @@
             </ul>
         </div>
         <div class="p-4">
-            <h1 class="text-2xl font-bold mb-4">Скачать видео лекцию:</h1>
+            <h1 class="text-2xl font-bold mb-4">Скачать лекцию:</h1>
             <ul>
                 @foreach ($files as $file)
                     <li class="mb-2">
@@ -36,6 +35,17 @@
                     </li>
                 @endforeach
             </ul>
+            <br>
+                  <h1 class="text-2xl font-bold mb-4">Домашнее задание:</h1>
+            <ul class="task-list">
+            @foreach ($homeworks as $homework)
+        <li class="task-list-item text-gray-500">
+               Название: {{ $homework->title }}
+        </li>
+        <li class="task-list-item text-gray-500">
+       Что надо сделать: {{ $homework->description }}
+        </li>
+@endforeach
         </div>
     </div>
 <script>

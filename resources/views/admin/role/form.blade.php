@@ -5,7 +5,7 @@
     @if(session('success'))
       <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    <h1 class="text-xl font-bold mb-4">Add Role</h1> <br>
+    <h1 class="text-xl font-bold mb-4">Добавить роль</h1> <br>
     <form method="POST" action="{{ route('role.create') }}">
       @csrf
 

@@ -4,32 +4,32 @@
 @if(session('success'))
           <div class="alert alert-success">{{ session('success') }}</div>
       @endif
-    <h1 class="text-2xl font-bold mb-4">Add/Edit MODULE</h1>
+    <h1 class="text-2xl font-bold mb-4">Добавить/Изменить Модуль</h1>
     <h1 class="text-xl font-bold mb-4"><a class="text-black hover:text-green-500" href="{{ route('training.table')}}">Назад </a></h1> <br>
     <form method="POST" action="{{ isset($module) ? route('module.update', ['training' => $training->id, 'module' => $module->id]) : route('module.store', ['id' => $training->id]) }}">
         @csrf
         @if(isset($module))
             <input type="hidden" name="_method" value="PUT">
         @endif
-    <h1 class="text-2xl font-bold mb-4">Training title : {{ $training->select('title')->where('id', $training->id)->first()->title }}</h1>
+    <h1 class="text-2xl font-bold mb-4">Название курса : {{ $training->select('title')->where('id', $training->id)->first()->title }}</h1>
       @csrf
       @if(isset($module))
       @else
-      <label for="module_title" class="font-bold mb-2 block bg-green-500 p-2 rounded inline-block" id="add_module_title">+ ADD Module</label><br><br>
+      <label for="module_title" class="font-bold mb-2 block bg-green-500 p-2 rounded inline-block" id="add_module_title">+ Добавить модуль</label><br><br>
       @endif
       @if(isset($module))
-    <input type="text" id="module_title" name="module_title" placeholder="Module Title" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4" value="{{ $module->title }}">
+    <input type="text" id="module_title" name="module_title" placeholder="Название модуля" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4" value="{{ $module->title }}">
       @else
-    <input type="text" id="module_title" name="module_title[]" placeholder="Module Title" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4" >
+    <input type="text" id="module_title" name="module_title[]" placeholder="Название модуля" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4" >
     @endif<br>
     @if(isset($module))
-    <textarea id="module_description" name="description" placeholder="Description" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4">{{ $module->description }}</textarea>
+    <textarea id="module_description" name="description" placeholder="Описание модуля" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4">{{ $module->description }}</textarea>
     @else
-    <textarea id="module_description" name="description[]" placeholder="Description" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4"></textarea>
+    <textarea id="module_description" name="description[]" placeholder="Описание модуля" required class="w-full px-3 py-2 rounded border border-gray-300 mb-4"></textarea>
     @endif
 <br><br>
       <ul id="module_list"></ul>
-      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded float-right">SAVE</button>
+      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded float-right">Сохранить</button>
     </form>
   </div>
   <script>
